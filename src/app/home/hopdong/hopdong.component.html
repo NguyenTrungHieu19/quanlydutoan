@@ -1,0 +1,97 @@
+<div class="header-chinhanh">
+  <div class="change-left">
+      <div class="title-chinhanh">
+          <p>Hợp đồng</p>
+      </div>
+  </div>
+  <div>
+    <nz-select class="select-trangthai" nzAllowClear  nzPlaceHolder="Chọn trạng thái" (ngModelChange)="load()">
+      <nz-option *ngFor="let data of listTT" [nzLabel]="data.name!" [nzValue]="data.id"></nz-option>
+    </nz-select>
+  </div>
+  <!-- //tìm kiếm -->
+  <div class="change-dateTime">
+    <nz-range-picker [nzRanges]="ranges" ngModel ></nz-range-picker>
+  </div>
+  <div class="change-betwen">
+      <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+          <input class="input-search-chiNhanh"  nz-input placeholder="Tìm Kiếm"/>
+      </nz-input-group>
+      <ng-template #suffixIconButton>
+          <button nz-button nzType="primary" nzSearch >
+            <span nz-icon nzType="search" ></span>
+          </button> 
+      </ng-template>
+  </div>
+
+  <div class="change-right">
+      <!-- Thêm chi nhánh -->
+      <button class="btn-add" nz-button nzType="primary" >
+          <span nz-icon nzType="plus" nzTheme="outline"></span>
+          <span>Thêm</span>
+      </button>
+      <!-- Sửa chi nhánh -->
+      <button [disabled]="ischecked" class="btn-edit" nz-button nzType="primary" >
+          <span nz-icon nzType="edit" nzTheme="outline"></span>
+          <span>Sửa</span>
+      </button>
+      <br />
+      <br />
+      <div>
+          <button class="btn-remove" [disabled]="ischecked" nz-button nzType="primary" >
+              <span nz-icon nzType="delete" nzTheme="outline"></span>
+              Xóa
+          </button>
+      </div>
+  </div>
+</div>
+<div>
+  <nz-table #baseTable [nzData]="['']" 
+              [nzShowTotal]="totalTemplate"
+              [nzTotal]="totalRows!"
+              [nzPageIndex]="pageIndex" [nzPageSize]="pageSize"
+              (nzQueryParams)="onQueryParamsChange($event)"   
+  >
+      <thead>
+        <tr>
+          <th [(nzChecked)]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)"></th>
+          <th nzWidth="60px"></th>
+          <th>Số hợp đồng</th>
+          <th>Tên</th>
+          <th>Số dự toán</th>
+          <th>Khách hàng</th>
+          <th>Ngày Ký</th>
+          <th>Gía trị</th>
+          <th>Dự toán</th>
+          <th>Tổng mua</th>
+          <th>Còn lại</th>
+          <th>Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let data of dataHopDong" (click)="rowClick(data)">
+          <tr>
+              <td nzShowCheckbox  [(nzChecked)]="data.checked!" (nzCheckedChange)="onChecked()"></td>
+            <!-- <td [nzExpand]="expandSet.has(data.id)" (nzExpandChange)="onExpandChange(data.id, $event)"></td> -->
+            <td>{{ data.soHopDong }}</td>
+            <td>{{ data.ten }}</td>
+            <td>{{ data.soDuToan }}</td>
+            <td>{{ data.tenKhachHang }}</td>
+            <td>{{ data.ngayKy }}</td>
+            <td>{{ data.giaTri }}</td>
+            <td>{{ data.tongDuToan }}</td>
+            <td>{{ data.tongMua }}</td>
+            <td></td>
+            <td>
+              
+            </td>
+      
+          </tr>
+          <!-- <tr [nzExpand]="expandSet.has(data.id)">
+            <span>{{ data.description }}</span>
+          </tr> -->
+        </ng-container>
+      </tbody>
+    </nz-table>
+    <ng-template #totalTemplate let-total> Tổng: {{ totalRows }} bản ghi </ng-template>
+</div>

@@ -1,0 +1,7 @@
+::ng-deep .ant-table{
+    overflow-y: none !important;
+}
+.select-trangthai{
+    width: 200px;
+    border: none;
+}

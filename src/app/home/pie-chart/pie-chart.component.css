@@ -1,0 +1,27 @@
+.chart-home{
+    display: flex;
+    width: 100%;
+  
+}
+/* #chart-dutoanthuchien{
+    width: 50%;
+    height: 20px;
+    margin: 35px auto;
+  }
+#chart-khachhang{
+    width: 50%;
+    margin: 35px auto;
+} */
+.waper-khachhang{
+    width: 50%;
+    margin:10px auto;
+}
+.waper-dutoanthuchien{
+    width: 50%;
+    margin:10px auto;
+}
+.chart-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}

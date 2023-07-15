@@ -1,1 +1,192 @@
 /* You can add global styles to this file, and also import other style files */
+/* .header-chinhanh{
+    display: flex;
+    justify-content: space-around ;
+    
+    padding: 0px 20px 0px 20px;
+    background: rgb(235 186 112);
+    align-items: center;
+} */
+.change-left{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+.change-right{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+::ng-deep .ant-modal{
+    width: 720px !important;
+}
+/* form thêm chi nhánh */
+.form-add{
+    display: flex;
+    /* width: 400px; */
+    row-gap: 10px;
+    align-items: center;
+    column-gap: 10px;
+}
+.form-add-tele span{
+  width: 90px;
+}
+.form-add-tele input{
+    width: 500px;
+}
+.form-add-tele {
+    display: flex;
+}
+.form-add-tele input {
+   width: 512px;
+}
+.form-add span{
+    width: 80px;
+}
+.form-add input{
+    width: 220px;
+}
+.form-addr{
+    display: flex;
+    column-gap: 30px;
+    row-gap: 10px;
+}
+.form-addr span{
+    width: 50px;
+}
+.form-addh{
+    display: flex;
+    column-gap: 30px;
+}
+.form-add-right{
+    display: flex;
+    flex-direction: column;
+    row-gap:5px;
+}
+.form-add-left{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.form-add-bottom{
+padding-top: 5px;
+ display: flex;
+ flex-direction: column;
+ row-gap: 5px;
+}
+.form-add-tex{
+    padding-top: 10px;
+    display: flex;
+}
+.form-add-tex span{
+    width: 90px;
+}
+.form-add-tex textarea{
+    width:300px;
+}
+.input-search-chiNhanh{
+    border-radius: 5px;
+    width: 300px !important;
+}
+.btn-edit{
+    background-color:rgb(244, 201, 9);
+    border: none;
+} 
+/* .btn-edit:hover{
+    background: rgb(235, 21, 21) !important;
+}  */
+.btn-remove{
+    background-color:rgb(235, 21, 21);
+    border: none;
+}
+.ant-layout-content{
+    margin: 5px 5px !important;
+}
+.header-chinhanh{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0px 20px 0px 20px;
+    background: rgb(160, 157, 160);
+    align-items: center;
+}
+.change-left{
+    display: flex;
+    
+}
+.change-right{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+::ng-deep .ant-modal{
+    width: 720px !important;
+}
+/* form thêm chi nhánh */
+.form-add{
+    display: flex;
+    /* width: 400px; */
+    row-gap: 10px;
+    align-items: center;
+    column-gap: 10px;
+}
+.form-add-tele span{
+  width: 90px;
+}
+.form-add-tele input{
+    width: 500px;
+}
+.form-add-tele {
+    display: flex;
+}
+.form-add-tele input {
+   width: 512px;
+}
+.form-add span{
+    width: 80px;
+}
+.form-add input{
+    width: 220px;
+}
+.form-addr{
+    display: flex;
+    column-gap: 30px;
+    row-gap: 10px;
+}
+.form-addr span{
+    width: 50px;
+}
+.form-addh{
+    display: flex;
+    column-gap: 30px;
+}
+.form-add-right{
+    display: flex;
+    flex-direction: column;
+    row-gap:5px;
+}
+.form-add-left{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.form-add-bottom{
+padding-top: 5px;
+ display: flex;
+ flex-direction: column;
+ row-gap: 5px;
+}
+.form-add-tex{
+    padding-top: 10px;
+    display: flex;
+}
+.form-add-tex span{
+    width: 90px;
+}
+.form-add-tex textarea{
+    width:300px;
+}
+.title-chinhanh{
+    font-size: 18px;
+    font-weight: 600;
+}

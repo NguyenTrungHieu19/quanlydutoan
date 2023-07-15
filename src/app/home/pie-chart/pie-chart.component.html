@@ -1,0 +1,54 @@
+<div class="chart-home">
+    <div class="waper-dutoanthuchien">
+        <div class="chart-header">
+            <div>
+                <p>DỰ TOÁN - THỰC HIỆN</p>
+            </div>
+            <div>
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Chọn chi nhánh" >
+                    <nz-option ></nz-option>
+                </nz-select>
+            </div>
+        </div>
+        <div id="chart-dutoanthuchien">
+            <apx-chart 
+            [series]="chartOptions.series!"
+            [chart]="chartOptions.chart!"
+            [dataLabels]="chartOptions.dataLabels!"
+            [plotOptions]="chartOptions.plotOptions!"
+            [yaxis]="chartOptions.yaxis!"
+            [legend]="chartOptions.legend!"
+            [fill]="chartOptions.fill!"
+            [stroke]="chartOptions.stroke!"
+            [tooltip]="chartOptions.tooltip!"
+            [xaxis]="chartOptions.xaxis!">
+        </apx-chart>
+        </div>
+    </div>
+    <div class="waper-khachhang">
+        <div class="chart-header">
+            <div>
+                <p>KHÁCH HÀNG</p>
+            </div>
+            <div>
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Chọn chi nhánh" >
+                    <nz-option ></nz-option>
+                </nz-select>
+            </div>
+        </div>
+        <div id="chart-khachhang">
+            <apx-chart 
+            [series]="chartKhachHang.series!"
+            [chart]="chartKhachHang.chart!"
+            [dataLabels]="chartKhachHang.dataLabels!"
+            [plotOptions]="chartKhachHang.plotOptions!"
+            [yaxis]="chartKhachHang.yaxis!"
+            [legend]="chartKhachHang.legend!"
+            [fill]="chartKhachHang.fill!"
+            [stroke]="chartKhachHang.stroke!"
+            [tooltip]="chartKhachHang.tooltip!"
+            [xaxis]="chartKhachHang.xaxis!">
+        </apx-chart>
+        </div>
+    </div>
+</div>

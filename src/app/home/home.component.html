@@ -1,0 +1,145 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="imagelogo">
+      <img src="/assets/image/logo.png" alt="">
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <a routerLink="trangchu">
+        <li class="home-waper" nz-submenu nzTitle="Trang chủ" nzIcon="home"> </li>
+      </a>
+      <li  nz-submenu nzTitle="Hệ thống" nzIcon="setting">
+        <ul class="backgournd-menu" >
+          <li nz-menu-item>Tài khoản</li>
+          <li nz-menu-item>Phân quyền</li>
+          <li nz-menu-item>Nhóm quyền</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Danh mục" nzIcon="menu">
+        <ul class="backgournd-menu">
+          <a routerLink="chinhanh">
+            <li nz-menu-item>Chi nhánh </li>
+          </a>
+          <a routerLink="nhacungcap">
+            <li nz-menu-item>Nhà cung cấp</li>
+          </a>
+          <a routerLink="khachhang">
+            <li nz-menu-item>Khách hàng</li>
+          </a>
+          <a routerLink="quytrinhky">
+            <li nz-menu-item>Quy trình ký</li>
+          </a>
+          <a routerLink="loaidutoan">
+            <li nz-menu-item>Loại dự toán</li>
+          </a>
+          <a routerLink="duyetnhacungcap">
+            <li nz-menu-item>Duyệt nhà cung cấp</li>
+          </a>
+
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Quản lý thu chi" nzIcon="dollar">
+        <ul class="backgournd-menu">
+          <li nz-menu-item>Loại thu chi</li>
+          <li nz-menu-item>Thu chi</li>
+          <li nz-menu-item>Tài khoản ngân hàng</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Quản lý dự toán chưa HĐ" nzIcon="dollar">
+        <ul class="backgournd-menu">
+          <li nz-menu-item>Hợp đồng chưa ký</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Quản lý dự toán" nzIcon="read">
+        <ul class="backgournd-menu">
+          <a routerLink="hopdong">         
+            <li nz-menu-item>Hợp đồng</li>
+          </a>
+          <li nz-menu-item>Dự toán</li>
+          <li nz-menu-item>Dự toán mua</li>
+          <li nz-menu-item>Đơn hàng</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Báo cáo" nzIcon="line-chart">
+        <ul class="backgournd-menu">
+          <li nz-menu-item>Hợp dồng ký thanh toán</li>
+          <li nz-menu-item>Đơn hàng ký thanh toán</li>
+          <li nz-menu-item>Doanh thu dự tính</li>
+          <li nz-menu-item>Doanh thu hợp đồng</li>
+          <li nz-menu-item>Báo cáo hợp đồng</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header class="header-right">
+      <div>
+        <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          (click)="isCollapsed = !isCollapsed">
+        </span>
+        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person" [(ngModel)]="chiNhanh" (ngModelChange)="setChiNhanh($event)">
+          <nz-option *ngFor="let data of emtyDatas" [nzLabel]="data.ten!" [nzValue]="data.id"></nz-option>
+        </nz-select>
+      </div>
+      <div class="header-imformation" >
+
+       <div >
+         <span class="bell-header" nz-icon nzType="bell" (click)="showDrawer()">
+           <sup >
+            <div class="notification-number">
+              <p>
+                {{notification.length}}
+              </p>
+            </div>
+          </sup>
+         </span>
+       </div>
+  
+
+        <!-- <nz-drawer [nzClosable]="false" [nzVisible]="visible" nzPlacement="right" nzTitle="Thông báo"
+          (nzOnClose)="close()"> -->
+          <!-- <router-outlet></router-outlet> -->
+          <!-- <ng-container *nzDrawerContent>
+            <div *ngFor="let data of notification">
+              <h2>{{data.ten}}</h2>
+              <p>{{data.noiDung}}</p>
+            </div>
+            <div class="btn-notification">
+              <a routerLink="thongbao">
+                <button nz-button nzType="default" (click)="handleNotification()">Tất cả</button>
+              </a>
+              <button nz-button nzType="default"(click)="handleCloseNotification()">Đóng</button>
+            </div>
+          </ng-container> -->
+        <!-- </nz-drawer> -->
+        <div>
+          <a nz-dropdown [nzDropdownMenu]="menu">
+            <span class="user-header" nz-icon nzType="user" nzTheme="outline"></span>
+            <span nz-icon nzType="down"></span>
+          </a>
+  
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <div class="icon-user">
+                <span nz-icon nzType="user" nzTheme="outline"></span>
+                <li  nz-menu-item nzIcon="user" (click)="show('1st menu item')">Thông tin tài khoản</li>
+              </div>
+              <div class="icon-user">
+                <span nz-icon nzType="swap" nzTheme="outline"></span>
+                <li nz-menu-item (click)="show('2nd menu item')">Đổi mật khẩu</li>
+              </div>
+              <div class="icon-user" (click)="logout()">
+                <span nz-icon nzType="logout" nzTheme="outline"></span>
+                <li nz-menu-item >Đăng xuất</li>
+              </div>
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+
+      </div>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+
+  </nz-layout>
+</nz-layout>

@@ -1,0 +1,161 @@
+nz-sider{
+  color: black;
+}
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .trigger:hover {
+    color: #1890ff;
+  }
+  .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+  nz-header {
+    background: #fff;
+    padding: 0;
+  }
+  nz-content {
+    margin: 0 16px;
+  }
+  nz-breadcrumb {
+    margin: 16px 0;
+  }
+  .inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+  }
+  nz-footer {
+    text-align: center;
+  }
+  
+  .ant-layout-sider .ant-layout-sider-dark ::ng-deep{
+     min-width: 300px !important;
+  }
+  .ant-layout-sider-children{
+    height: 100vh;
+  }
+  .ant-layout-sider-dark::ng-deep  {
+    min-width: 300px !important;
+    height: 100vh !important;
+    background:rgb(32, 157, 97) ;
+  }
+  .ant-menu.ant-menu-dark{
+    background:rgb(32, 157, 97) !important ;
+  }
+  .backgournd-menu::ng-deep {
+    background: #2da0a0 !important;
+}
+  .ant-layout-sider-collapsed::ng-deep{
+    min-width: 80px !important;
+  }
+  .ant-menu-inline .ant-menu-item{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border:1px solid white
+  }
+  .ant-menu-inline .ant-menu-submenu{
+    border: 1px solid white;
+  }
+  .ant-menu-inline .ant-menu-submenu:hover{
+    background: #10cc94;
+  }
+  .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color:  #ec5f08;
+   }
+  .ant-menu-item:hover{
+    background: #077b5a;
+    border:1px solid white;
+  }
+  .imagelogo{
+    height: 64px;
+  }
+  .imagelogo img{
+    width: 100px;
+    height: 50px;
+    margin-left: 50px;
+    padding-top: 5px;
+  }
+  nz-select {
+    width: 200px;
+  }
+  
+  .header-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-imformation{
+    display: flex;
+    padding-right: 30px;
+  }
+  .anticon {
+     font-size: 20px;
+     padding: 0 10px;
+  }
+  .anticon-down{
+    display: none;
+  }
+  .ant-layout{
+    position: relative;
+    z-index: 1;
+  }
+  .ant-modal ng-tns-c2887055259-11{
+    top:0px;
+    margin: 0;
+  }
+  .ant-menu-submenu-arrow {
+    display: none;
+  }
+  
+  .header-right[_ngcontent-ng-c2871736647] {
+    background:rgb(32, 132, 181) ;
+    padding: 0;
+  }
+  .anticon[_ngcontent-ng-c991947906] {
+    font-size: 22px;
+    padding: 0 15px;
+  
+  }
+  .icon-user{
+    display: flex;
+    align-items: center;
+  }
+  [nz-button] {
+    margin-right: 8px;
+    margin-bottom: 12px;
+  }
+  .btn-notification{
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+  }
+  .home-waper .ng-star-inserted {
+      display: none;
+  }
+  nz-header{
+    background:rgb(31, 174, 114) !important;
+  }
+  .bell-header{
+    color: #fff;
+  }
+  .user-header{
+    color: #fff;
+  }
+  .notification-number{
+    position: relative;
+    top:10px;
+    width: 25px ;
+    height: 25px ;
+    background-color: red;
+    border-radius: 50px;
+  }
+  .notification-number p{
+   position: absolute;
+  }

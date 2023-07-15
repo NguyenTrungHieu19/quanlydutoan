@@ -1,0 +1,37 @@
+<div >
+    <div *ngFor="let data of notification, let i=index" >
+      <h2>{{data.ten}}</h2>
+      <p>{{data.noiDung}}</p>
+    </div>
+    <div class="btn-notification">
+     
+      <a routerLink="thongbao">
+        <button nz-button nzType="default" (click)="handleNotification()">Tất cả</button>
+      </a>
+      <button nz-button nzType="default"(click)="handleCloseNotification()">Đóng</button>
+    </div>
+</div>
+
+<!-- <nz-table #rowSelectionTable
+          nzShowSizeChanger
+          [nzData]="['']" 
+>
+    <thead>
+        <tr>
+            <th [(nzChecked)]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)"></th>
+            <th>Tên</th>
+            <th>Nội dung</th>
+            <th>Trạng thái</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of notificationData" (click)="rowClick(data)">
+            <td nzShowCheckbox [(nzChecked)]="data.checked" (nzCheckedChange)="onChecked()"></td>
+            <td>{{ data.ten }}</td>
+            <td>{{ data.noiDung }}</td>
+            <td>{{ data.status }}</td>
+
+        </tr>
+    </tbody>
+</nz-table> -->

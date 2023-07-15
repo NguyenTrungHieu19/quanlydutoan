@@ -1,0 +1,127 @@
+<div class="header-chinhanh">
+    <div class="change-left">
+        <div class="title-chinhanh">
+            <p>Nhà cung cấp</p>
+        </div>
+    </div>
+    <div>
+      <nz-select class="select-trangthai" nzAllowClear  nzPlaceHolder="Chọn trạng thái" [(ngModel)] ="selectedTT"(ngModelChange)="load()">
+        <nz-option *ngFor="let data of listTT" [nzLabel]="data.name!" [nzValue]="data.id"></nz-option>
+      </nz-select>
+    </div>
+    <!-- //tìm kiếm -->
+    <div class="change-betwen">
+        <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+            <input class="input-search-chiNhanh" [(ngModel)]="searchValue" type="text" nz-input placeholder="Tìm Kiếm"/>
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+            <button nz-button nzType="primary" nzSearch (click)="handleSearchNhaCungCap()" >
+              <span nz-icon nzType="search" ></span>
+            </button>
+        </ng-template>
+    </div>
+
+    <div class="change-right">
+        <!-- Thêm chi nhánh -->
+        <button class="btn-add" nz-button nzType="primary" (click)="showModalAdd()">
+            <span nz-icon nzType="plus" nzTheme="outline"></span>
+            <span>Thêm</span>
+        </button>
+        <!-- Sửa chi nhánh -->
+        <button [disabled]="ischecked" class="btn-edit" nz-button nzType="primary" (click)="showModalEdit()">
+            <span nz-icon nzType="edit" nzTheme="outline"></span>
+            <span>Sửa</span>
+        </button>
+        <br />
+        <br />
+        <div>
+            <button class="btn-remove" [disabled]="ischecked" nz-button nzType="primary" (click)="showConfirm()">
+                <span nz-icon nzType="delete" nzTheme="outline"></span>
+                Xóa
+            </button>
+        </div>
+    </div>
+</div>
+<!-- <nz-table  #rowSelectionTable nzShowSizeChanger [nzData]="['']"
+           (nzQueryParams)="onQueryParamsChange($event)"
+           [nzPageIndex] ="pageIndex" [nzPageSize]="pageSize"
+          
+           >
+<thead>
+  <tr>
+    <th
+      [(nzChecked)]="checked"
+      [nzIndeterminate]="indeterminate"
+      (nzCheckedChange)="onAllChecked($event)"
+    ></th>
+    <th>Mã</th>
+    <th>Số thuế</th>
+    <th>Tên</th>
+    <th>Địa chỉ</th>
+    <th>Điện thoại</th>
+    <th>Email</th>
+    <th>Công nợ</th>
+    <th>File</th>
+    <th>Trạng thái</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let data of DataNhaCungCap" (click)="rowClick(data)" >
+    <td nzShowCheckbox [(nzChecked)!]="data.checked" (nzCheckedChange)="onChecked()"></td>
+    <td>{{ data.ma }}</td>
+    <td>{{ data.maSoThue }}</td>
+    <td>{{ data.ten }}</td>
+    <td>{{ data.diaChi }}</td>
+    <td>{{ data.dienThoai }}</td>
+    <td>{{ data.email }} </td>  
+    <td>{{ data.tapTin }}</td>
+    <td>
+      <nz-tag [nzColor]="data.status?'#87d068': '#f50'">{{data.status? 'Kích hoạt': 'Khóa'}}</nz-tag>
+    </td>
+  </tr>
+</tbody>
+
+</nz-table> -->
+<!-- <ng-template #totalTemplate let-total> Tổng: {{ total }} bản ghi </ng-template> -->
+<!-- <nz-pagination [nzPageIndex]="1" [nzTotal]="500"></nz-pagination> -->
+<div nz-col nzSpan="24">
+    <nz-table #baseTable [nzData]="['']" nzShowSizeChanger nzFrontPagination="true"
+              [nzShowTotal]="totalTemplate"
+              [nzTotal]="totalRows!"
+              [nzPageIndex]="pageIndex" [nzPageSize]="pageSize"
+              (nzQueryParams)="onQueryParamsChange($event)"
+         
+              >
+      <thead>
+        <tr>
+          <th nzWidth="40px"[(nzChecked)]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)"></th>
+          <th>Mã</th>
+          <th>Mã số thuế</th>
+          <th>Tên</th>
+          <th>Điạ chỉ</th> 
+          <th>Điện thoại</th>
+          <th>Email</th>
+          <th>Công nợ</th>
+          <th>file</th>
+          <th nzWidth="80px">Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of DataNhaCungCap" (click)="rowClick(data)">
+          <td nzShowCheckbox  [(nzChecked)]="data.checked!" (nzCheckedChange)="onChecked()"></td>
+          <td>{{ data.ma }}</td>
+          <td >{{ data.maSoThue }}</td>
+          <td >{{ data.ten }}</td>
+          <td >{{ data.diaChi}}</td>
+          <td >{{ data.dienThoai }}</td>
+          <td>{{ data.email}}</td>
+          <td></td>
+          <td>{{data.tapTin}}</td>
+          <td>
+            <nz-tag [nzColor]="data.status?'#87d068': '#f50'">{{data.status? 'Kích hoạt': 'Khóa'}}</nz-tag>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <ng-template #totalTemplate let-total> Tổng: {{ totalRows }} bản ghi </ng-template>
+  </div>

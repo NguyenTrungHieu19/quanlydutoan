@@ -1,0 +1,29 @@
+.input-modal{
+    display: flex;
+    justify-content: space-around;
+    column-gap: 20px;
+    /* align-items: center; */
+    padding-top: 20px;
+}
+.input-text{
+    display: flex;
+    /* align-items: center; */
+    column-gap: 5px;
+    width: 300px;
+}
+.input-diachi{
+ 
+    width: 600px;
+}
+.title-text{
+    /* margin-top: 20px; */
+    top: 20px;
+    column-gap: 5px; 
+    width: 90px;
+}
+.input-text-diachi{
+    padding-top: 20px;
+    display: flex;
+    /* column-gap: 5px; */
+    /* width: 120px; */
+}

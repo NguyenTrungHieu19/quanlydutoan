@@ -1,0 +1,73 @@
+    <div  >
+          <div class="input-modal">
+                <div class="input-text">
+                    <p class="title-text">Mã</p>
+                    <input nz-input placeholder="Mã tự sinh" nzSize="default" [(ngModel)]="entity.ma" />
+                </div>
+                <div  class="input-text">
+                    <p class="title-text">Điện thoại</p>
+                    <input nz-input placeholder="Nhập số điện thoại" nzSize="default" [(ngModel)]="entity.dienThoai" />
+                </div>
+            </div>
+            <div class="input-modal">
+                <div class="input-text">
+                    <p class="title-text">Tên</p>
+                    <input nz-input placeholder="Nhập tên" nzSize="default" [(ngModel)]="entity.ten" />
+                </div>
+                <div class="input-text" >
+                    <p class="title-text">Email</p>
+                    <input nz-input placeholder="Nhập email" nzSize="default" [(ngModel)]="entity.email" />
+                </div>
+            </div>
+        </div>
+     
+            <div class="input-text-diachi">
+                <p class="title-text">Địa chỉ</p>
+                <input class="input-diachi" nz-input placeholder="Nhập địa chỉ" [(ngModel)]="entity.diaChi" />
+            </div>
+       
+        <div class="input-modal">
+            <div class="input-text">
+                <p class="title-text">Website</p>
+                <input nz-input placeholder="Nhập website" nzSize="default" [(ngModel)]="entity.website" />
+            </div>
+            <div class="input-text">
+                <p class="title-text">Số thứ tự</p>
+                <nz-input-number [(ngModel)]="demoValue" [nzMin]="1" [nzMax]="10" [nzStep]="1" name="stt"
+                    [(ngModel)]="entity.thuTu"></nz-input-number>
+            </div>
+        </div>
+        <div class="input-modal">
+            <div class="input-text" >
+                <p class="title-text">Ghi chú</p>
+                <textarea rows="4" nz-input [(ngModel)]="inputValue"></textarea> 
+            </div>
+            <div>
+                <nz-upload
+                class="avatar-uploader"
+                nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                nzName="avatar"
+                nzListType="picture-card"
+                [nzShowUploadList]="false"
+                [nzBeforeUpload]="beforeUpload"
+                (nzChange)="handleChange($event)"
+              >
+                <ng-container *ngIf="!avatarUrl">
+                  <span class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></span>
+                  <div class="ant-upload-text">Upload</div>
+                </ng-container>
+                <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+              </nz-upload>
+    
+            </div>
+        </div>
+        <div class="input-text" >
+            <p>Trạng thái</p>
+            <label nz-checkbox [(ngModel)]="entity.status">Checkbox</label> 
+        </div>
+
+    <div *nzModalFooter>
+        <button nz-button nzType="default" (click)="handleCancel()">Hủy</button>
+        <button nz-button nzType="primary" (click)="handleOk()" >Lưu</button>
+    </div>
+

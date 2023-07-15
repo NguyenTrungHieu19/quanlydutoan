@@ -1,0 +1,33 @@
+<div class="waper-login">
+  <div class="waper-form">
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <div class="title-login">
+        <img src="/assets/image/logo.png" alt="">
+        <h2>Quản Lý Dự Toán </h2>
+      </div>
+      <div>
+
+     
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Vui lòng nhập lại tên đăng nhập!">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="userName" placeholder="Tên đăng nhập" name="userName" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Vui lòng nhập lại mật khẩu!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="Nhập mật khẩu" name="password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+     
+        </div>
+     <!-- <div class="form-group">
+     </div> -->
+      <button [disabled]="!validateForm.valid" nz-button class="login-form-button login-form-margin"
+        [nzType]="'primary'">Đăng nhập</button>
+    </form>
+  </div>
+</div>
